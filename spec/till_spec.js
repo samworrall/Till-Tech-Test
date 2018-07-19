@@ -33,5 +33,16 @@ describe("Till", () => {
       till.process_order('Tea', 1);
       expect(till.basket).toEqual([ { 'item': 'Tea', 'amount': 1, 'price': 3.65 } ])
     });
+
+    it("Increases the basket length by 1", () => {
+      till.process_order('Tea', 1);
+      expect(till.basket.length).toEqual(1)
+    });
+
+    it("Increases the basket length by 2", () => {
+      till.process_order('Tea', 1);
+      till.process_order('Americano', 2);
+      expect(till.basket.length).toEqual(2)
+    });
   });
 });
