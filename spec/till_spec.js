@@ -1,4 +1,4 @@
-describe("Till", function() {
+describe("Till", () => {
   var Till = require('../lib/till.js');
 
   beforeEach(function() {
@@ -20,7 +20,11 @@ describe("Till", function() {
                                  'Tiramisu': 11.4,
                                  'Blueberry Muffin': 4.05,
                                  'Chocolate Chip Muffin': 4.05,
-                                 'Muffin Of The Day': 4.55 
+                                 'Muffin Of The Day': 4.55
                                }));
+  });
+
+  it("Returns an empty basket", () => {
+    expect(till.basket.length).toEqual(0);
   });
 });
