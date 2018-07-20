@@ -15,10 +15,36 @@ This is what a sample receipt looks like:
 ![a receipt](/images/receipt.jpg)
 
 
+### User Stories:
+
+```
+As a User,
+So that I can know what is on offer at the shop,
+I would like to be able to view the menu
+```
+
+```
+As a User,
+So that I do not have to do the mental math,
+I would like to be able to automate the tallying of a customers items
+```
+
+```
+As a User,
+So that I can check with the customer that I have processed everything,
+I would like to view the current order
+```
+
+```
+As a User,
+So that I can give the customer information about their order,
+I would like to be able to view a receipt
+```
+
 Version 1
 ---------
 
-Implement a system that contains the business logic to produce receipts similar to this, based on a `json` price list and test orders. A sample `.json` file has been provided with the list of products sold at this particular coffee shop. 
+Implement a system that contains the business logic to produce receipts similar to this, based on a `json` price list and test orders. A sample `.json` file has been provided with the list of products sold at this particular coffee shop.
 
 Here are some sample orders you can try - whether you use this information is up to you:
 
