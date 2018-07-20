@@ -3,7 +3,7 @@ describe("Till", () => {
 
   beforeEach(() => {
     printer = jasmine.createSpyObj('printer', {'print_receipt': "Tea 1 X 3.65\nTotal: $3.65"})
-    class Shop {
+    class FakeShop {
       constructor() {
         this.menu = ({ 'Cafe Latte': 4.75,
                        'Flat White': 4.75,
@@ -23,8 +23,8 @@ describe("Till", () => {
                      })
       }
     }
-    shop = new Shop();
-    till = new Till(shop, printer);
+    fakeShop = new FakeShop();
+    till = new Till(fakeShop, printer);
   });
 
   it("Returns an empty basket", () => {
