@@ -9,4 +9,10 @@ describe("Printer", () => {
   it("orderLog is an array", () => {
     expect(printer.orderLog).toEqual(log)
   });
+
+  describe("#print_receipt", () => {
+    it("Returns a pretty printed receipt", () => {
+      expect(printer.print_receipt()).toEqual("Tea 1 X 3.65\nTotal: $3.65")
+    });
+  });
 });
