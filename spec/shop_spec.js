@@ -35,4 +35,8 @@ describe("Shop", () => {
                                  'Muffin Of The Day': 4.55
                                }));
   });
+
+  it("Returns the tax of the shop", () => {
+    expect(shop.tax).toEqual(8.64)
+  });
 });
