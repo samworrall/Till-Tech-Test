@@ -52,7 +52,7 @@ describe("Till", () => {
   describe("#return_receipt", () => {
     it("Calls print_receipt on printer", () => {
       till.return_receipt();
-      expect(printer.print_receipt).toHaveBeenCalledWith(till.basket)
+      expect(printer.print_receipt).toHaveBeenCalledWith(till.shop, till.basket)
     });
 
     it("Returns a pretty printed receipt", () => {
