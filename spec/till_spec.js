@@ -14,6 +14,10 @@ describe("Till", () => {
     expect(till.shopAddress).toEqual("123 Lakeside Way")
   });
 
+  it("Returns the phone number of the shop", () => {
+    expect(till.shopPhoneNumber).toEqual("16503600708")
+  });
+
   it("Returns the menu", () => {
     expect(till.menu).toEqual(({ 'Cafe Latte': 4.75,
                                  'Flat White': 4.75,
