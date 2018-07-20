@@ -2,7 +2,7 @@ describe("Till", () => {
   var Till = require('../lib/till.js');
 
   beforeEach(() => {
-    printer = jasmine.createSpyObj('printer', ['print_receipt'])
+    printer = jasmine.createSpyObj('printer', {'print_receipt': "Tea 1 X 3.65\nTotal: $3.65"})
     till = new Till(printer);
   });
 
@@ -51,6 +51,11 @@ describe("Till", () => {
     it("Calls print_receipt on printer", () => {
       till.return_receipt();
       expect(printer.print_receipt).toHaveBeenCalledWith(till.basket)
+    });
+
+    it("Returns a pretty printed receipt", () => {
+      till.process_order('Tea', 1);
+      expect(till.return_receipt()).toEqual("Tea 1 X 3.65\nTotal: $3.65")
     });
   });
 });
