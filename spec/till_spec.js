@@ -6,6 +6,10 @@ describe("Till", () => {
     till = new Till(printer);
   });
 
+  it("Returns the shop name", () => {
+    expect(till.shopName).toEqual("The Coffee Connection")
+  });
+
   it("Returns the menu", () => {
     expect(till.menu).toEqual(({ 'Cafe Latte': 4.75,
                                  'Flat White': 4.75,
