@@ -1,7 +1,7 @@
 describe("Till", () => {
   var Till = require('../lib/till.js');
 
-  beforeEach(function() {
+  beforeEach(() => {
     till = new Till();
   });
 
