@@ -37,6 +37,6 @@ describe("Shop", () => {
   });
 
   it("Returns the tax of the shop", () => {
-    expect(shop.tax).toEqual(8.64)
+    expect(shop.tax).toEqual(0.0864)
   });
 });
