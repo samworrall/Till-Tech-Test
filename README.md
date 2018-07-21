@@ -35,7 +35,7 @@ So that I can give the customer information about their order,
 I would like to be able to view a receipt
 ```
 
-### Version 1 - Completed
+### Version 1 Completed
 
 Implement a system that contains the business logic to produce receipts similar to this, based on a `json` price list and test orders. A sample `.json` file has been provided with the list of products sold at this particular coffee shop.
 
