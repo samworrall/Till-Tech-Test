@@ -59,5 +59,11 @@ describe("Till", () => {
       till.process_order('Tea', 1);
       expect(till.return_receipt()).toEqual("Tea 1 X 3.65\nTotal: $3.65")
     });
+
+    it("Clears the basket after printing receipt", () => {
+      till.process_order('Tea', 1);
+      till.return_receipt();
+      expect(till.basket).toEqual([])
+    });
   });
 });
