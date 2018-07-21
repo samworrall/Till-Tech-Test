@@ -2,7 +2,7 @@ describe("Till", () => {
   var Till = require('../lib/till.js');
 
   beforeEach(() => {
-    printer = jasmine.createSpyObj('printer', {'print_receipt': "Tea 1 X 3.65\nTotal: $3.65"})
+    printer = jasmine.createSpyObj('printer', {'print_receipt': "The Coffee Connection\n123 Lakeside Way\nPhone: 16503600708\nSam\nTea 1 X 3.65\nTax: $0.32\nTotal: $3.97\nCash: $5.00\nChange: $1.03"})
     class FakeShop {
       constructor() {
         this.menu = ({ 'Cafe Latte': 4.75,
@@ -51,18 +51,18 @@ describe("Till", () => {
 
   describe("#return_receipt", () => {
     it("Calls print_receipt on printer", () => {
-      till.return_receipt();
-      expect(printer.print_receipt).toHaveBeenCalledWith(till.shop, till.basket)
+      till.return_receipt('Sam');
+      expect(printer.print_receipt).toHaveBeenCalledWith(till.shop, till.basket, 'Sam')
     });
 
     it("Returns a pretty printed receipt", () => {
       till.process_order('Tea', 1);
-      expect(till.return_receipt()).toEqual("Tea 1 X 3.65\nTotal: $3.65")
+      expect(till.return_receipt('Sam')).toEqual("The Coffee Connection\n123 Lakeside Way\nPhone: 16503600708\nSam\nTea 1 X 3.65\nTax: $0.32\nTotal: $3.97\nCash: $5.00\nChange: $1.03")
     });
 
     it("Clears the basket after printing receipt", () => {
       till.process_order('Tea', 1);
-      till.return_receipt();
+      till.return_receipt('Sam');
       expect(till.basket).toEqual([])
     });
   });
