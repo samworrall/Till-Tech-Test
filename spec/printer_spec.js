@@ -13,16 +13,17 @@ describe("Printer", () => {
     fakeShop = new FakeShop();
     log = [{'item': 'Tea', 'amount': 1, 'price': 3.65}]
     printer = new Printer();
+    customer = 'Sam'
   });
 
   describe("#print_receipt", () => {
     it("Returns a pretty printed receipt", () => {
-      expect(printer.print_receipt(fakeShop, log)).toEqual("The Coffee Connection\n123 Lakeside Way\nPhone: 16503600708\nTea 1 X 3.65\nTax: $0.32\nTotal: $3.97")
+      expect(printer.print_receipt(fakeShop, log, customer)).toEqual("The Coffee Connection\n123 Lakeside Way\nPhone: 16503600708\nSam\nTea 1 X 3.65\nTax: $0.32\nTotal: $3.97")
     });
 
     it("Returns a pretty printed receipt with multiple items", () => {
       log.push({'item': 'Americano', 'amount': 2, 'price': 3.75});
-      expect(printer.print_receipt(fakeShop, log)).toEqual("The Coffee Connection\n123 Lakeside Way\nPhone: 16503600708\nTea 1 X 3.65\nAmericano 2 X 3.75\nTax: $0.96\nTotal: $12.11")
+      expect(printer.print_receipt(fakeShop, log, customer)).toEqual("The Coffee Connection\n123 Lakeside Way\nPhone: 16503600708\nSam\nTea 1 X 3.65\nAmericano 2 X 3.75\nTax: $0.96\nTotal: $12.11")
     });
   });
 });
