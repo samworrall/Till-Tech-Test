@@ -25,6 +25,10 @@ describe("Printer", () => {
       log.push({'item': 'Americano', 'amount': 2, 'price': 3.75});
       expect(printer.print_receipt(fakeShop, log, customer, 20.00)).toEqual("The Coffee Connection\n123 Lakeside Way\nPhone: 16503600708\nSam\nTea 1 X 3.65\nAmericano 2 X 3.75\nTax: $0.96\nTotal: $12.11\nCash: $20\nChange: $7.89")
     });
+
+    it("Throws an error", () => {
+      expect( () => { printer.print_receipt(fakeShop, log, customer, 1.00) } ).toThrow("Total exceeds cash given")
+    });
   });
 
   describe("#check_for_valid_cash", () => {
