@@ -8,6 +8,11 @@ This is what a sample receipt looks like:
 
 ![a receipt](/images/receipt.jpg)
 
+### Approach
+
+I decided from the outset that I would create at least 3 classes, the till, the printer, and the shop.
+
+I began by incorporating the hipstercoffee.json file into the shop class.
 
 ### User Stories:
 
