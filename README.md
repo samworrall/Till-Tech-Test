@@ -2,6 +2,8 @@
 
 We want to sell tills to local hipster coffee shop who are finally embracing the 21st century. We need a new till to replace their vintage machines - unfortunately, hipster staff are too cool to learn a new system, so we need you to build something that they will understand.
 
+This program is written using Node.js, ES6, and is tested with Jasmine.
+
 ### Specification
 
 This is what a sample receipt looks like:
@@ -10,9 +12,15 @@ This is what a sample receipt looks like:
 
 ### Approach
 
-I decided from the outset that I would create at least 3 classes, the till, the printer, and the shop.
+I decided fairly early that I would create 3 classes, the till, the printer, and the shop. The till is responsible for processing an order, and can ask for a receipt from the printer class, which is responsible for printing receipts. The shop class is responsible for knowing its own details such as shop name, address, number, tax, menu etc.
 
-I began by incorporating the hipstercoffee.json file into the shop class.
+Currently I think my printer class is responsible for too much. It makes calculations, manipulates the total, incorporates tax etc. These should not be the responsibility of the printer, so I would like to move them either to the till class, or create a new processor class to handle this functionality.
+
+I began by incorporating the hipstercoffee.json file into the shop class, allowing me access to each menu item and its respective price.
+
+I then created the till class and printer class. Initially, the till class held the information about the shop, however I decided fairly early on that this information is not relevant to the till, and so moved it to a shop class.
+
+Currently, the till can process any number of orders that get added to a basket array. When the till asks the printer for a receipt, it tells the printer the name of the customer, the cash they have given, the shop, and the current basket. The printer uses this information to work out the correct totals, and returns a pretty printed receipt with all the relevant information. I have completed version 1 of this tech test, and half of version 2.
 
 ### User Stories:
 
