@@ -14,7 +14,7 @@ This is what a sample receipt looks like:
 
 I decided fairly early that I would create 3 classes, the till, the printer, and the shop. The till is responsible for processing an order, and can ask for a receipt from the printer class, which is responsible for printing receipts. The shop class is responsible for knowing its own details such as shop name, address, number, tax, menu etc.
 
-Currently I think my printer class is responsible for too much. It makes calculations, manipulates the total, incorporates tax etc. These should not be the responsibility of the printer, so I would like to move them either to the till class, or create a new processor class to handle this functionality.
+Currently I think my printer class is responsible for too much. It makes calculations, manipulates the total, incorporates tax etc. These should not be the responsibility of the printer, so I would like to move them either to the till class, or create a new processor class to handle this functionality. I also need to add the date and time of the transaction to the printed receipt.
 
 I began by incorporating the hipstercoffee.json file into the shop class, allowing me access to each menu item and its respective price.
 
